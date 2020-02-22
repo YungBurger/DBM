@@ -138,5 +138,6 @@
       "name": "Send Message"
     }
   ],
-  "comType": "3"
+  "comType": "3",
+  "_timeRestriction": 40
 }
