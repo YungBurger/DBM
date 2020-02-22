@@ -1,0 +1,71 @@
+{
+  "name": "levels",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "cMRCr",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Server Info"
+    },
+    {
+      "debu": "1",
+      "numbefst2": ".",
+      "numbefstselect": "2",
+      "sort": "1",
+      "start": "username",
+      "middle": "-",
+      "end": "result",
+      "getresults": "15",
+      "dataName": "${tempVars(\"ID\")}level",
+      "varName2": "leaderboard",
+      "storage": "1",
+      "name": "Store Member Data List"
+    },
+    {
+      "title": "Top 15 Levels in the server!",
+      "author": "",
+      "color": "",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "emb",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "emb",
+      "message": "${tempVars(\"leaderboard\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "emb",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0"
+}

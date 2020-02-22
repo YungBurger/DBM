@@ -1,0 +1,142 @@
+{
+  "name": "level",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "bZZhP",
+  "actions": [
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}level",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "level",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xp",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "xp",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xptop",
+      "defaultVal": "500",
+      "storage": "1",
+      "varName2": "xptop",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "xp",
+      "comparison": "14",
+      "value": "tempVars(\"xptop\")",
+      "iftrue": "2",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "xp2",
+      "min": "20",
+      "max": "55",
+      "name": "Generate Random Number"
+    },
+    {
+      "FirstNumber": "${tempVars(\"xp\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"xp2\")}",
+      "storage": "1",
+      "varName": "newxp",
+      "name": "Basic Math Operation"
+    },
+    {
+      "storage": "1",
+      "varName": "newxp",
+      "comparison": "14",
+      "value": "tempVars(\"xptop\")",
+      "iftrue": "2",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xp",
+      "changeType": "0",
+      "value": "tempVars(\"newxp\")",
+      "name": "Control Member Data"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xp",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Member Data"
+    },
+    {
+      "FirstNumber": "${tempVars(\"xptop\")}",
+      "info": "0",
+      "SecondNumber": "300",
+      "storage": "1",
+      "varName": "topxp",
+      "name": "Basic Math Operation"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xptop",
+      "changeType": "0",
+      "value": "tempVars(\"topxp\")",
+      "name": "Control Member Data"
+    },
+    {
+      "FirstNumber": "${tempVars(\"level\")}",
+      "info": "0",
+      "SecondNumber": "1",
+      "storage": "1",
+      "varName": "newlevel",
+      "name": "Basic Math Operation"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}level",
+      "changeType": "0",
+      "value": "tempVars(\"newlevel\")",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "> **You have ranked up to level ${tempVars(\"newlevel\")}, ${member}**",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "3"
+}

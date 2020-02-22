@@ -1,0 +1,368 @@
+{
+  "name": "rank",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "phHdN",
+  "actions": [
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "dics",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}level",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "level",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xp",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "xp",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xptop",
+      "defaultVal": "500",
+      "storage": "1",
+      "varName2": "xptop",
+      "name": "Store Member Data"
+    },
+    {
+      "FirstNumber": "${tempVars(\"xp\")}",
+      "info": "3",
+      "SecondNumber": "${tempVars(\"xptop\")}",
+      "storage": "1",
+      "varName": "percent1",
+      "name": "Math Operation Plus"
+    },
+    {
+      "FirstNumber": "${tempVars(\"percent1\")}",
+      "info": "2",
+      "SecondNumber": "100",
+      "storage": "1",
+      "varName": "percent2",
+      "name": "Math Operation Plus"
+    },
+    {
+      "FirstNumber": "${tempVars(\"percent2\")}",
+      "info": "4",
+      "SecondNumber": "100",
+      "storage": "1",
+      "varName": "percent",
+      "name": "Math Operation Plus"
+    },
+    {
+      "url": "resources/image.png",
+      "storage": "1",
+      "varName": "image",
+      "name": "Canvas Create Image"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "x": "51",
+      "y": "51",
+      "fontPath": "fonts/font.otf",
+      "fontColor": "FFFFFF",
+      "fontSize": "22",
+      "align": "0",
+      "text": "Level: ${tempVars(\"level\")}",
+      "name": "Canvas Draw Text on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "x": "51",
+      "y": "29",
+      "fontPath": "fonts/font.otf",
+      "fontColor": "FFFFFF",
+      "fontSize": "20",
+      "align": "0",
+      "text": "${tempVars(\"username\")}#${tempVars(\"dics\")}",
+      "name": "Canvas Draw Text on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "cass",
+      "type": "0",
+      "width": "428",
+      "height": "90",
+      "lineWidth": "20",
+      "lineCap": "1",
+      "percent": "100",
+      "color": "808586",
+      "name": "Canvas Generate Progress Bar"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "storage2": "1",
+      "varName2": "cass",
+      "x": "30",
+      "y": "71",
+      "effect": "0",
+      "name": "Canvas Draw Image on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "x": "51",
+      "y": "84",
+      "fontPath": "fonts/font.otf",
+      "fontColor": "FFFFFF",
+      "fontSize": "22",
+      "align": "0",
+      "text": "${tempVars(\"xp\")} / ${tempVars(\"xptop\")} XP (${tempVars(\"percent\")}%)",
+      "name": "Canvas Draw Text on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "cas",
+      "type": "0",
+      "width": "428",
+      "height": "90",
+      "lineWidth": "20",
+      "lineCap": "1",
+      "percent": "${tempVars(\"percent\")}",
+      "color": "0EC6E1",
+      "name": "Canvas Generate Progress Bar"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "storage2": "1",
+      "varName2": "cas",
+      "x": "30",
+      "y": "71",
+      "effect": "0",
+      "name": "Canvas Draw Image on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "channel": "0",
+      "varName2": "",
+      "message": "",
+      "compress": "9",
+      "spoiler": "0",
+      "storage2": "0",
+      "varName3": "",
+      "name": "Canvas Send Image"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "dics",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}level",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "level",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xp",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "xp",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xptop",
+      "defaultVal": "500",
+      "storage": "1",
+      "varName2": "xptop",
+      "name": "Store Member Data"
+    },
+    {
+      "FirstNumber": "${tempVars(\"xp\")}",
+      "info": "3",
+      "SecondNumber": "${tempVars(\"xptop\")}",
+      "storage": "1",
+      "varName": "percent1",
+      "name": "Math Operation Plus"
+    },
+    {
+      "FirstNumber": "${tempVars(\"percent1\")}",
+      "info": "2",
+      "SecondNumber": "100",
+      "storage": "1",
+      "varName": "percent2",
+      "name": "Math Operation Plus"
+    },
+    {
+      "FirstNumber": "${tempVars(\"percent2\")}",
+      "info": "4",
+      "SecondNumber": "100",
+      "storage": "1",
+      "varName": "percent",
+      "name": "Math Operation Plus"
+    },
+    {
+      "url": "resources/image.png",
+      "storage": "1",
+      "varName": "image",
+      "name": "Canvas Create Image"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "x": "51",
+      "y": "51",
+      "fontPath": "fonts/font.otf",
+      "fontColor": "FFFFFF",
+      "fontSize": "22",
+      "align": "0",
+      "text": "Level: ${tempVars(\"level\")}",
+      "name": "Canvas Draw Text on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "x": "51",
+      "y": "29",
+      "fontPath": "fonts/font.otf",
+      "fontColor": "FFFFFF",
+      "fontSize": "20",
+      "align": "0",
+      "text": "${tempVars(\"username\")}#${tempVars(\"dics\")}",
+      "name": "Canvas Draw Text on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "cass",
+      "type": "0",
+      "width": "428",
+      "height": "90",
+      "lineWidth": "20",
+      "lineCap": "1",
+      "percent": "100",
+      "color": "808586",
+      "name": "Canvas Generate Progress Bar"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "storage2": "1",
+      "varName2": "cass",
+      "x": "30",
+      "y": "71",
+      "effect": "0",
+      "name": "Canvas Draw Image on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "x": "51",
+      "y": "84",
+      "fontPath": "fonts/font.otf",
+      "fontColor": "FFFFFF",
+      "fontSize": "22",
+      "align": "0",
+      "text": "${tempVars(\"xp\")} / ${tempVars(\"xptop\")} XP (${tempVars(\"percent\")}%)",
+      "name": "Canvas Draw Text on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "cas",
+      "type": "0",
+      "width": "428",
+      "height": "90",
+      "lineWidth": "20",
+      "lineCap": "1",
+      "percent": "${tempVars(\"percent\")}",
+      "color": "0EC6E1",
+      "name": "Canvas Generate Progress Bar"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "storage2": "1",
+      "varName2": "cas",
+      "x": "30",
+      "y": "71",
+      "effect": "0",
+      "name": "Canvas Draw Image on Image"
+    },
+    {
+      "storage": "1",
+      "varName": "image",
+      "channel": "0",
+      "varName2": "",
+      "message": "",
+      "compress": "9",
+      "spoiler": "0",
+      "storage2": "0",
+      "varName3": "",
+      "name": "Canvas Send Image"
+    }
+  ],
+  "comType": "0"
+}
